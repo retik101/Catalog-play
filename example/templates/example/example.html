@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'example/css/style.css' %}">
+    <link rel="icon" href="{% static 'logo.png' %}">
+
+</head>
+<body>
+    <h1>Example Form</h1>
+    <form action="" method="POST">
+        <input type="text" name="name" id="name" placeholder="Name">
+        {% csrf_token %}
+        <input type="submit" value="Submit">
+    </form>
+    <h1>Example Model</h1>
+    <ul>
+        {% for model in example_model %}
+            <li>{{ model.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
